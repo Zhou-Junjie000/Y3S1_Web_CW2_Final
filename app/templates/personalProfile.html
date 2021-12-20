@@ -1,0 +1,15 @@
+{% extends 'userBasePase.html' %}
+{% block profile %}
+    <div class="profile-card-wrap" style="margin-left: 10%;transform: translateX(-50%)">
+        <input id="check" type="checkbox" class="check"><label for="check" class="toggle"> + </label>
+        <div class="content" data-text="Click '+' to see detail infor">
+            <div class="title">Profile</div>
+            <p>Username: {{ user.userName }}</p>
+            <p style="margin-top: 5%">Borrowed: {{ user.bookCount }} books</p>
+            <p style="margin-top: 5%">Infractions: {{ user.criminalRecord }} times</p>
+        </div>
+        <div class="link-info">
+            <img class="photo" src="{{ url_for('static',filename='Image/2.jpg') }}">
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'searchBaseForUser.html' %}
+{% block searchResult %}
+    <table class="table table-striped" style="font-family: Arial; font-size: medium">
+        <thead>
+        <tr>
+            <th>Picture</th>
+            <th>Book Information</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tbody style="font-family: 'Arial Unicode MS';font-size: large;font-weight: bold">
+        {% for book in resultBook %}
+            <tr>
+                <td style="line-height: 750%;width: 35%;"><img style="width: 50%"
+                                                               src={{ url_for('static',filename=book.bookImg) }}></td>
+                <td style="line-height: 500%">book
+                    name:&nbsp;&nbsp;{{ book.bookName }}<br>author:&nbsp;&nbsp;{{ book.author }}<br>
+                    number: {{ book.bookNumber }}</td>
+                <td style="line-height: 600%">
+                    <a href="/bookDetail/{{ book.id }}">
+                        <button type="button" class="btn btn-info" style="width: 80%;margin-left: -15%;margin-top: 50%">
+                            Detail
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        {% for book in resultAuthor %}
+            <tr>
+                <td style="line-height: 750%;width: 35%;"><img style="width: 50%"
+                                                               src={{ url_for('static',filename=book.authorImg) }}></td>
+                <td style="line-height: 500%">book
+                    name:&nbsp;&nbsp;{{ book.bookName }}<br>author:&nbsp;&nbsp;{{ book.author }}<br>
+                    number: {{ book.bookNumber }}</td>
+                <td style="line-height: 600%">
+                    <a href="/bookDetail/{{ book.id }}">
+                        <button type="button" class="btn btn-info" style="width: 80%;margin-left: -15%;margin-top: 50%">
+                            Detail
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

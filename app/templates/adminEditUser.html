@@ -1,0 +1,41 @@
+{% extends 'adminBasePage.html' %}
+{% block ADMINEditUser %}
+    <h3>{{ msg }}</h3>
+    <form action="#" method="post">
+        <div class="form-group floating-control-group" style="margin-top: 6%">
+            <label for="txtFloatingPassword">Username</label>
+            {#            {{ form.userName (cols='80',class_='form-control',style="height:60px;",placeholder=user.userName) }}#}
+            <input name="username" type="text" placeholder={{ user.userName }} class="form-control"
+                   style="height: 60px">
+        </div>
+        <div class="form-group floating-control-group" style="margin-top: 6%">
+            <label for="txtFloatingPassword">Number of Book Borrowed:&nbsp;&nbsp;</label>
+            <span id="value1" style="font-size: medium;color: darkblue">{{ user.bookCount }}</span>
+            {#            {{ form.borrowBook(cols='80',class_='',style="height:60px;cursor:pointer",type="range",#}
+            {#                        min="0", max="3",value=user.bookCount, id="range1",oninput="change1()",onchange="change1()") }}#}
+            <input type="range" name="borrowbook" min="0" max="3" id="range1" oninput="change1()" onchange="change1()"
+                   value={{ user.bookCount }}>
+        </div>
+        <div class="form-group floating-control-group" style="margin-top: 6%">
+            <label for="txtFloatingPassword">Criminal Number: &nbsp;&nbsp;</label>
+            <span id="value2" style="font-size: medium;color: darkblue">{{ user.criminalRecord }}</span>
+            {#            {{ form.criminalNumber(cols='80',class_='',style="height:60px;cursor:pointer",type="range",#}
+            {#                        min="0", max="5",value=user.criminalRecord, id="range2",oninput="change2()",onchange="change2()") }}#}
+            <input type="range" name="criminal" min="0" max="5" id="range2" oninput="change2()" onchange="change2()"
+                   value={{ user.criminalRecord }}>
+        </div>
+        <p style="color: red;margin-top: 2%;">{{ msg }}</p>
+        <button type="submit" class="btn btn-primary" style="margin-top: 5%;">Submit</button>
+    </form>
+    <script type='text/javascript'>
+        function change1() {
+            var value = document.getElementById('range1').value;
+            document.getElementById('value1').innerHTML = value;
+        }
+
+        function change2() {
+            var value = document.getElementById('range2').value;
+            document.getElementById('value2').innerHTML = value;
+        }
+    </script>
+{% endblock %}

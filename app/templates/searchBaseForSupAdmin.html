@@ -1,0 +1,17 @@
+{% extends 'superAdminBasePage.html' %}
+{% block searchBase %}
+    <form id="form" class="form" action="#" method="post">
+        <div class="wthree-field" style="position:absolute;width: 50%;left: 60%;transform: translateX(-50%);
+        z-index: 2">
+            {#            {{ form.searchResult(cols='80',class_='form-control',style="height:80px;",placeholder="Enter book name or author name") }}#}
+            <input type="text" class="form-control" placeholder="Enter book name or author..." name="search"
+                   style="height: 80px">
+
+            <button type="submit" class="btn" style="margin-top: -80px;position: absolute;
+            height: 80px;right: 0;width: 100px;color: gray"><i class="fa fa-search" style="font-size:16px"></i>
+            </button>
+        </div>
+    </form>
+    <div style="margin-top: 100px;width: 100%;align: center;border-top: gray solid;"></div>
+    {% block searchResult %}{% endblock %}
+{% endblock %}

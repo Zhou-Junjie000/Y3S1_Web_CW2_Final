@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Books</title>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="{{ url_for('static',filename='userViewBook.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='secondBaseStyles.css') }}">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+
+</head>
+<body>
+<div class="wrapper">
+    <div class="top_navbar">
+        <div class="hamburger">
+            <div class="hamburger__inner">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="logo">
+                View Books
+            </div>
+            <div class="right_menu ">
+                <ul>
+                    <li>
+                        <i class="fas fa-user"></i>
+                        <div class="profile_dd">
+                            <div class="dd_item" onclick="canNotChange()">Change Password</div>
+                            <div class="dd_item"><a href={{ url_for('logout') }}>Logout</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main_container">
+        <div class="sidebar">
+            <div class="sidebar__inner">
+                <div class="profile">
+                    <div class="img">
+                        <img src={{ url_for('static',filename='Image/2.jpg') }} alt="profile_pic">
+                    </div>
+                    <div class="profile_info">
+                        <p>Welcome</p>
+                        <p class="profile_name">{{ username }}</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <a href={{ url_for('allBookForUser') }}>
+                            <span class="icon"><i class="fa fa-book"></i></span>
+                            <span class="title">All Book</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('fictionBookForUser') }}>
+                            <span class="icon"><i class="fa fa-book"></i></span>
+                            <span class="title">Fiction</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('poemBookForUser') }}>
+                            <span class="icon"><i class="fa fa-book"></i></span>
+                            <span class="title">Poem</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('fairytailBookForUser') }}>
+                            <span class="icon"><i class="fa fa-book"></i></span>
+                            <span class="title">Fairy tail</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('otherBookForUser') }}>
+                            <span class="icon"><i class="fa fa-book"></i></span>
+                            <span class="title">Other</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('searchBookForUser') }}>
+                            <span class="icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <span class="title">Search</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href={{ url_for('bookRecommend') }}>
+                            <span class="icon"><i class="fa fa-chevron-circle-left" aria-hidden="true"></i></span>
+                            <span class="title">Back</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            {% block allbook %}{% endblock %}
+            {% block fictionbook %}{% endblock %}
+            {% block poembook %}{% endblock %}
+            {% block fairytailbook %}{% endblock %}
+            {% block otherbook %}{% endblock %}
+            {% block searchBase %}{% endblock %}
+            {% block bookdetail %}{% endblock %}
+        </div>
+    </div>
+</div>
+
+</body>
+<script>
+    $(document).ready(function () {
+        $(".hamburger .hamburger__inner").click(function () {
+            $(".wrapper").toggleClass("active")
+        })
+
+        $(".top_navbar .fas").click(function () {
+            $(".profile_dd").toggleClass("active");
+        })
+    });
+</script>
+</html>

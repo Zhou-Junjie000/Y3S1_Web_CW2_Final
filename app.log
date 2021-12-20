@@ -1,0 +1,17 @@
+2021-12-08 21:02:23,904 - INFO - views.py - login - 97 - info log
+2021-12-08 21:02:29,174 - INFO - views.py - login - 97 - info log
+2021-12-08 21:02:32,800 - INFO - views.py - login - 97 - info log
+2021-12-08 21:02:32,853 - INFO - views.py - adminPage - 219 - info log
+2021-12-08 21:02:35,257 - INFO - views.py - userListForAdmin - 297 - info log
+2021-12-08 21:02:48,255 - INFO - views.py - adminEditUser - 358 - info log
+2021-12-08 21:02:50,037 - INFO - views.py - adminEditUser - 358 - info log
+2021-12-08 21:02:50,049 - INFO - views.py - userListForAdmin - 297 - info log
+2021-12-08 21:02:52,600 - INFO - views.py - adminEditUser - 358 - info log
+2021-12-08 21:02:54,638 - INFO - views.py - adminEditUser - 358 - info log
+2021-12-08 21:02:54,652 - INFO - views.py - userListForAdmin - 297 - info log
+2021-12-08 21:02:57,665 - INFO - views.py - bookListForAdmin - 461 - info log
+2021-12-08 21:03:00,728 - DEBUG - views.py - searchBookForAdmin - 1111 - info debug
+2021-12-08 21:03:05,273 - DEBUG - views.py - searchBookForAdmin - 1111 - info debug
+2021-12-08 21:03:09,415 - INFO - views.py - userListForAdmin - 297 - info log
+2021-12-08 21:03:11,684 - INFO - views.py - logout - 159 - info log
+2021-12-08 21:03:11,688 - INFO - views.py - login - 97 - info log

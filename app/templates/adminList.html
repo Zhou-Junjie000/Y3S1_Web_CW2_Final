@@ -1,0 +1,28 @@
+{% extends 'superAdminBasePage.html' %}
+{% block adminlist %}
+    <table class="table table-striped" style="font-family: Arial; font-size: medium">
+        <caption style="font-size: large; font-weight: bold">Admin List</caption>
+        <thead>
+        <tr>
+            <th>Admin Id</th>
+            <th>Admin Name</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for admin in admins %}
+            <tr>
+                <td style="line-height: 350%">{{ admin.id }}</td>
+                <td style="line-height: 350%">{{ admin.adminName }}</td>
+                <td style="line-height: 350%">
+                    <a href="/deleteAdmin/{{ admin.id }}" type="submit" class="fa fa-trash" onclick="con()"
+                       style="background-color: white;color: cadetblue;border-color: white;margin-left: 7%;
+                       font-size: 24px;display: inline-block; vertical-align: middle;">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

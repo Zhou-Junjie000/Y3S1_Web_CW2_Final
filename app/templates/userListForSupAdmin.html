@@ -1,0 +1,36 @@
+{% extends 'superAdminBasePage.html' %}
+{% block userlist %}
+    <table class="table table-striped" style="font-family: Arial; font-size: medium">
+        <caption style="font-size: large; font-weight: bold">User List</caption>
+        <thead>
+        <tr>
+            <th>User Name</th>
+            <th>Borrowed Book</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td style="line-height: 350%">{{ user.userName }}</td>
+                <td style="line-height: 350%">{{ user.bookCount }}</td>
+                <td style="line-height: 350%">
+                    <a href="/supAdminEditUser/{{ user.id }}" type="submit" class="fa fa-edit"
+                       style="background-color: white;color: cadetblue;border-color: white;
+                       font-size: 24px;display: inline-block; vertical-align: middle;">
+                    </a>
+                    <a href="/deleteUserForSupAdmin/{{ user.id }}" type="submit" class="fa fa-trash" onclick="con()"
+                       style="background-color: white;color: cadetblue;border-color: white;margin-left: 6%;
+                       font-size: 24px;display: inline-block; vertical-align: middle;">
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <script>
+    function con(){
+        confirm("Deleting the User Succeeded");
+    }
+    </script>
+{% endblock %}

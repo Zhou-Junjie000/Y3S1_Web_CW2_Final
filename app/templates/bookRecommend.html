@@ -1,0 +1,138 @@
+{% extends 'libraryBasePage.html' %}
+{% block bookRec %}
+    <h1 style="position: absolute;top: 100%;left: 50%;transform: translateX(-50%);font-size: xxx-large">Recommended Books</h1>
+    <div class="container bg-white" style="position:absolute;top: 110%;left: 50%;transform: translateX(-50%)">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/4.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《丰乳肥臀》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span></div>
+                <div class="price">莫言</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/5.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《阿Q正传》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span></div>
+                <div class="price">鲁迅</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/6.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《Jane Eyre》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star-half" style="color:goldenrod;"></span></div>
+                <div class="price">Charlotte Bronte</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/18.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《Mysterious Island》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span></div>
+                <div class="price">Jules Verne</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/19.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《活着》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span></div>
+                <div class="price">余华</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/20.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《资治通鉴》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span></div>
+                <div class="price">[北宋]司马光</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/21.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《围城》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span></div>
+                <div class="price">钱钟书</div>
+            </div>
+            <div class="col-lg-3 col-sm-6 d-flex flex-column align-items-center justify-content-center product-item my-3">
+                <div class="product"><img
+                        src={{ url_for('static',filename='Image/22.jpg') }}
+                        alt="">
+                    <ul class="d-flex align-items-center justify-content-center list-unstyled icons">
+                        <li class="icon"><span class="fas fa-expand-arrows-alt"></span></li>
+                        <li class="icon mx-3"><span class="far fa-heart"></span></li>
+                        <li class="icon"><span class="fas fa-shopping-bag"></span></li>
+                    </ul>
+                </div>
+                <div class="title pt-4 pb-1">《骆驼祥子》</div>
+                <div class="d-flex align-content-center justify-content-center"><span class="fas fa-star"></span> <span
+                        class="fas fa-star"></span> <span class="fas fa-star"></span> <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span></div>
+                <div class="price">老舍</div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

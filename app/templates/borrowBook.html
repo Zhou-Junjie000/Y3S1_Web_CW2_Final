@@ -1,0 +1,95 @@
+{% extends 'userBasePase.html' %}
+{% block borrow %}
+
+    <div class="scene" style="margin-left: 8%; margin-top: 7%">
+        {% if books[0]!=None %}
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src={{ url_for('static',filename=books[0].bookImg) }}/>
+                </div>
+                <div class="card__face card__face--back">
+                    <img src={{ url_for('static',filename=books[0].authorImg) }}/>
+                </div>
+            </div>
+
+            <h3 style="position: absolute;top:130%;left: 12%;transform: translateX(-50%)">
+                《{{ books[0].bookName[0:4]+'..' }}》</h3>
+            <h3 style="position: absolute;top:145%;left: 12%;transform: translateX(-50%)">{{ books[0].author[0:8] }}</h3>
+            <a href="/returnBook/{{ books[0].id }}" onclick="con()">
+                <button type="button" class="btn btn-primary"
+                        style="position: absolute;top: 170%;left: 12%;transform: translateX(-50%)">Return
+                </button>
+            </a>
+        {% else %}
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src={{ url_for('static',filename='Image/23.jpg') }}/>
+                </div>
+                <div class="card__face card__face--back">
+                    <img src={{ url_for('static',filename='Image/23.jpg') }}/>
+                </div>
+            </div>
+        {% endif %}
+        {% if books[1]!=None %}
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src={{ url_for('static',filename=books[1].bookImg) }}/>
+                </div>
+                <div class="card__face card__face--back">
+                    <img src={{ url_for('static',filename=books[1].authorImg) }}/>
+                </div>
+            </div>
+
+            <h3 style="position: absolute;top:130%;left: 48%;transform: translateX(-50%)">
+                《{{ books[1].bookName[0:4]+'..' }}》</h3>
+            <h3 style="position: absolute;top:145%;left: 48%;transform: translateX(-50%)">{{ books[1].author[0:8] }}</h3>
+            <a href="/returnBook/{{ books[1].id }}" onclick="con()">
+                <button type="button" class="btn btn-primary"
+                        style="position: absolute;top: 170%;left: 48%;transform: translateX(-50%)">Return
+                </button>
+            </a>
+        {% else %}
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src={{ url_for('static',filename='Image/23.jpg') }}/>
+                </div>
+                <div class="card__face card__face--back">
+                    <img src={{ url_for('static',filename='Image/23.jpg') }}/>
+                </div>
+            </div>
+        {% endif %}
+        {% if books[2]!=None %}
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src={{ url_for('static',filename=books[2].bookImg) }}/>
+                </div>
+                <div class="card__face card__face--back">
+                    <img src={{ url_for('static',filename=books[2].authorImg) }}/>
+                </div>
+            </div>
+
+            <h3 style="position: absolute;top:130%;left: 83%;transform: translateX(-50%)">
+                《{{ books[2].bookName[0:4]+'..' }}》</h3>
+            <h3 style="position: absolute;top:145%;left: 83%;transform: translateX(-50%)">{{ books[2].author[0:8] }}</h3>
+            <a href="/returnBook/{{ books[2].id }}" onclick="con()">
+                <button type="button" class="btn btn-primary"
+                        style="position: absolute;top: 170%;left: 83%;transform: translateX(-50%)">Return
+                </button>
+            </a>
+        {% else %}
+            <div class="card">
+                <div class="card__face card__face--front">
+                    <img src={{ url_for('static',filename='Image/23.jpg') }}/>
+                </div>
+                <div class="card__face card__face--back">
+                    <img src={{ url_for('static',filename='Image/23.jpg') }}/>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    <script>
+        function con() {
+            confirm("Return the book success");
+        }
+    </script>
+{% endblock %}

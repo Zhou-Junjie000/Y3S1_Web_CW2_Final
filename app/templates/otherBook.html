@@ -1,0 +1,34 @@
+{% extends 'userViewBook.html' %}
+{% block otherbook %}
+    <h1>Type: &nbsp;Other Books</h1>
+    <table class="table table-striped" style="font-family: Arial; font-size: medium">
+        <thead>
+        <tr>
+            <th></th>
+            <th>Book Information</th>
+            <th>Operation</th>
+        </tr>
+        </thead>
+        <tbody style="font-family: 'Arial Unicode MS';font-size: large;font-weight: bold">
+        {% for book in books %}
+            <tr>
+                <td style="line-height: 750%"><img width="18%" style="margin-left: 20%"
+                                                   src={{ url_for('static',filename=book.bookImg) }}/>
+                </td>
+                <td style="line-height: 250%;">book
+                    name:&nbsp;&nbsp;{{ book.bookName }}<br>author:&nbsp;&nbsp;{{ book.author }}<br>
+                    number: {{ book.bookNumber }}</td>
+                <td style="line-height: 350%">
+                    <a href="/userBorrowBookInOtherBook/{{ book.id }}">
+                        <button type="button" class="btn btn-primary" style="width: 100%;margin-left: -15%">Borrow
+                        </button>
+                        <br></a>
+                    <a href="/bookDetail/{{ book.id }}">
+                        <button type="button" class="btn btn-info" style="width: 100%;margin-left: -15%">Detail</button>
+                    </a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to the Library</title>
+    <link rel="stylesheet" href="{{ url_for('static',filename='libraryBaseDemo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='libraryBaseCarousel.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='clicky-menu.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='libraryBaseStyles.css') }}">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.2/css/all.css'>
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static',filename='clicky-menu.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body id="page">
+<form action="#" method="post">
+    <div class="wthree-field" style="position:absolute;width: 60%;left: 50%;transform: translateX(-50%);
+        top: 40%;z-index: 2">
+        {#        {{ form.searchResult(cols='80',class_='form-control',style="height:80px;",placeholder="Enter book name or author name") }}#}
+        <input type="text" class="form-control" placeholder="Enter book name or author..." name="search" style="height: 80px">
+        <button type="submit" class="btn" style="margin-top: -80px;position: absolute;
+            height: 80px;right: 0;width: 100px;color: gray"><i class="fa fa-search" style="font-size:16px"></i>
+        </button>
+    </div>
+</form>
+<ul class="cb-slideshow" style="position:absolute;">
+    <li><span>Image 01</span>
+        <div></div>
+    </li>
+    <li><span>Image 02</span>
+        <div></div>
+    </li>
+    <li><span>Image 03</span>
+        <div></div>
+    </li>
+    <li><span>Image 04</span>
+        <div></div>
+    </li>
+    <li><span>Image 05</span>
+        <div></div>
+    </li>
+    <li><span>Image 06</span>
+        <div></div>
+    </li>
+</ul>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" hidden>
+    <symbol id="arrow" viewbox="0 0 16 16">
+        <polyline points="4 6, 8 10, 12 6" stroke="#000" stroke-width="2" fill="transparent" stroke-linecap="round"/>
+    </symbol>
+</svg>
+<nav id="site-navigation" class="site-navigation" aria-label="Dropdown Menu">
+    <ul class="main-menu clicky-menu no-js">
+        <li>
+            <a href="#">Welcome &nbsp{{ username }}</a>
+        </li>
+        <li>
+            <a href="#">
+                Classification
+                <svg aria-hidden="true" width="16" height="16">
+                    <use xlink:href="#arrow"/>
+                </svg>
+            </a>
+            <ul>
+                <li><a href={{ url_for('fictionBookForUser') }}>Fiction</a></li>
+                <li><a href={{ url_for('poemBookForUser') }}>Poem</a></li>
+                <li><a href={{ url_for('fairytailBookForUser') }}>Fairy tale</a></li>
+                <li><a href={{ url_for('otherBookForUser') }}>Others</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href={{ url_for('allBookForUser') }}><i class="fa fa-align-justify" style="font-size:17px"></i>&nbsp;&nbsp;All
+                Books</a>
+        </li>
+        <li>
+            <a href={{ url_for('personalPage') }}><i class="fa fa-user" style="font-size:17px"></i>&nbsp;&nbsp;Me</a>
+        </li>
+    </ul>
+</nav>
+{% block bookRec %}{% endblock %}
+</body>
+
+</html>

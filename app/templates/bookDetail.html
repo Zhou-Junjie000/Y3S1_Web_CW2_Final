@@ -1,0 +1,20 @@
+{% extends 'userViewBook.html' %}
+{% block bookdetail %}
+    <a href={{ url_for('allBookForUser') }}><i class="fa fa-chevron-left" style="font-size: 48px;color: black"></i></a>
+    <h3 style="color:red;text-align: center">{{ msg }}</h3>
+    <div style="position: absolute;width: 500px;height: 500px;">
+        <img style="margin-left: 20%;width: 80%" src={{ url_for('static',filename=book.bookImg) }}>
+    </div>
+    <div style="position:absolute;margin-top: 5%;margin-left: 50%;">
+        <h2>Book Name:&nbsp;&nbsp;{{ book.bookName }}</h2><br>
+        <h2>Author:&nbsp;&nbsp;{{ book.author }}</h2><br>
+        <h2>Publisher:&nbsp;&nbsp;{{ book.publisher }}</h2><br>
+        <h2>Publish Time:&nbsp;&nbsp;{{ book.publishTime }}</h2><br>
+        <h2>Description:&nbsp;&nbsp;{{ book.description[0:30] }}</h2>
+    </div>
+    <a href="/userBorrowBookInDetailPage/{{ book.id }}"
+       style="position: absolute;left: 60%;transform: translateX(-50%);top: 105%">
+        <button type="button" class="btn btn-primary">Borrow
+        </button>
+        <br></a>
+{% endblock %}

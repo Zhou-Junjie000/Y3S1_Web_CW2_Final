@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>secondBase</title>
+    <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static',filename='secondBaseStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='personalProfile.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='PersonalProfileDefault.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='PersonalProfileNormalize.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='PersonalProfileStyles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='borrowBookStyle.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static',filename='changePasswordForUser.css') }}">
+    <link href="https://cdn.bootcss.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900'>
+</head>
+<body>
+<div class="wrapper">
+    <div class="top_navbar">
+        <div class="hamburger">
+            <div class="hamburger__inner">
+                <div class="one"></div>
+                <div class="two"></div>
+                <div class="three"></div>
+            </div>
+        </div>
+        <div class="menu">
+            <div class="logo">
+                Personal Page
+            </div>
+            <div class="right_menu ">
+                <ul>
+                    <li>
+                        <i class="fas fa-user"></i>
+                        <div class="profile_dd">
+                            <div class="dd_item"><a href={{ url_for('changePasswordForUser') }}>Change Password</a></div>
+                            <div class="dd_item"><a href={{ url_for('logout') }}>Logout</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main_container">
+        <div class="sidebar">
+            <div class="sidebar__inner">
+                <div class="profile">
+                    <div class="img">
+                        <img src={{ url_for('static',filename='Image/2.jpg') }} alt="profile_pic">
+                    </div>
+                    <div class="profile_info">
+                        <p>Welcome</p>
+                        <p class="profile_name">User {{ username }}</p>
+                    </div>
+                </div>
+                <ul>
+                    <li>
+                        <a href={{ url_for('personalProfile') }}>
+                            {#                        <a href='#'>#}
+                            <span class="icon"><i class="fas fa-dice-d6"></i></span>
+                            <span class="title">Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('borrowBook') }}">
+                            <span class="icon"><i class="fab fa-elementor"></i></span>
+                            <span class="title">Borrowed Book</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ url_for('bookRecommend') }}">
+                            <span class="icon"><i class="fa fa-building"></i></span>
+                            <span class="title">Enter Library</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+            {% block borrow %}{% endblock %}
+            {% block profile %}{% endblock %}
+            {% block changePassword %}{% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    $(document).ready(function () {
+        $(".hamburger .hamburger__inner").click(function () {
+            $(".wrapper").toggleClass("active")
+        })
+
+        $(".top_navbar .fas").click(function () {
+            $(".profile_dd").toggleClass("active");
+        })
+    });
+</script>
+</html>

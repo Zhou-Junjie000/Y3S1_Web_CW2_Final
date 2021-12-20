@@ -1,0 +1,27 @@
+{% extends 'loginBase.html' %}
+{% block reg %}
+    <div class="content-w3ls text-center">
+        <img src={{ url_for('static',filename='Image/2.jpg') }} alt="" class="img-responsive">
+        <p style="color: red;margin-top: -5%;margin-bottom: 5%;font-size: medium">{{ msg }}</p>
+        <form action="#" method="post">
+            <div class="wthree-field">
+{#                {{ form.userName(cols='80',class_='form-control',style="height:40px;",placeholder="Username") }}#}
+                <input name="username" type="text" placeholder="Username">
+            </div>
+            <div class="wthree-field">
+{#                {{ form.pwd(cols='80',class_='form-control',style="height:40px;",placeholder="Password") }}#}
+                <input name="pwd" type="password" placeholder="Password">
+            </div>
+            <div class="wthree-field">
+{#                {{ form.pwd2(cols='80',class_='form-control',style="height:40px;",placeholder="Confirm Password") }}#}
+                <input name="pwd2" type="password" placeholder="Confirm password">
+            </div>
+            <div class="wthree-field">
+                <button type="submit" class="btn">Register</button>
+            </div>
+            <div class="login-bottom">
+                <a href={{ url_for('login') }} class="">Back to Login</a>
+            </div>
+        </form>
+    </div>
+{% endblock %}
